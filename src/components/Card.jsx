@@ -19,7 +19,11 @@ function Card({ anime, onClick }) {
         </p>
         <div className="join">
           <div class="badge badge-error me-2">{anime.type ?? 'N/A'}</div>
-          <div class="badge badge-accent me-2 capitalize">{anime.season ?? 'N/A'}</div>
+          <div class="badge badge-accent me-2">
+            {anime.season 
+              ? <span className="capitalize">{`${anime.season ?? 'N/A'} ${anime.year ?? 'N/A'}`}</span> 
+              : 'N/A'}
+          </div>
           <div class="badge badge-success">{anime.score ?? 'N/A'}</div>
         </div>
         <div class="card-actions pt-4">
