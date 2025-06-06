@@ -36,7 +36,7 @@ function Top() {
   };
 
   return (
-    <>
+    <div className="relative">
       <Navbar />
 
       <Main>
@@ -49,7 +49,7 @@ function Top() {
       </Main>
       
       <Footer />
-    </>
+    </div>
   );
 }
 
