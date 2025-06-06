@@ -3,6 +3,6 @@
   themes: aqua --default;
 }
 
-body {
+html {
   @apply bg-base-200;
 }
