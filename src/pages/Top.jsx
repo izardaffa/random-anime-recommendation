@@ -40,7 +40,7 @@ function Top() {
       <Navbar />
 
       <Main>
-        {!loading && !generated && <Button className="btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl" onClick={handleGetAnime}>Generate Random Anime</Button>}
+        {!loading && !generated && <Button className="md:btn-lg" onClick={handleGetAnime}>Generate Random Anime</Button>}
         {loading && <Loader />}
         {!loading && generated && <Card 
           anime={anime}
