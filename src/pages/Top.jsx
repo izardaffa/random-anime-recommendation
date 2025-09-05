@@ -14,15 +14,20 @@ function Top() {
 
   const getAnime = async () => {
     try {
-      const allowedTypes = ['tv', 'movie', 'ova', 'ona', 'special'];
+      // const allowedTypes = ["tv", "movie", "ova", "ona", "special"];
+      const allowedTypes = ["tv", "movie"];
+      const allowedSeasons = ["winter", "spring", "summer", "fall"];
       let anime;
       do {
-        const response = await axios.get(`https://api.jikan.moe/v4/random/anime`);
+        const response = await axios.get(
+          `https://api.jikan.moe/v4/random/anime`
+        );
         anime = response.data.data;
-      } while (!allowedTypes.includes(anime.type.toLowerCase()));
+        console.log(anime.type);
+      } while (!allowedTypes.includes(anime?.type?.toLowerCase()));
       return anime;
     } catch (error) {
-      console.log('Error fetching data:', error);
+      console.log("Error fetching data:", error);
       throw error;
     }
   };
@@ -40,14 +45,17 @@ function Top() {
       <Navbar />
 
       <Main>
-        {!loading && !generated && <Button className="md:btn-lg" onClick={handleGetAnime}>Generate Random Anime</Button>}
+        {!loading && !generated && (
+          <Button className="md:btn-lg" onClick={handleGetAnime}>
+            Generate Random Anime
+          </Button>
+        )}
         {loading && <Loader />}
-        {!loading && generated && <Card 
-          anime={anime}
-          onClick={handleGetAnime}
-        />}
+        {!loading && generated && (
+          <Card anime={anime} onClick={handleGetAnime} />
+        )}
       </Main>
-      
+
       <Footer />
     </div>
   );
