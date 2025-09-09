@@ -14,9 +14,7 @@ function Top() {
 
   const getAnime = async () => {
     try {
-      // const allowedTypes = ["tv", "movie", "ova", "ona", "special"];
-      const allowedTypes = ["tv", "movie"];
-      const allowedSeasons = ["winter", "spring", "summer", "fall"];
+      const allowedTypes = ["tv", "movie", "ova", "ona", "special"];
       let anime;
       do {
         const response = await axios.get(

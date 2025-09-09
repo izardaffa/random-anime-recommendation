@@ -8,19 +8,16 @@ function Card({ anime, onClick }) {
         <p>
           {anime.status ?? "Status Airing"} - {anime.episodes ?? "N/A"} Episode
         </p>
-      </div>
-      <figure>
-        <img
-          src={anime.images.webp.image_url ?? "/no-img.png"}
-          alt={`${anime.title ?? "N/A"} Poster`}
-          className="rounded-xl"
-        />
-      </figure>
-      <div className="card-body items-center text-center">
-        <p className="max-h-36 overflow-y-auto">
-          {anime.synopsis ??
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, corporis cum at aspernatur atque rerum tempora laboriosam harum earum quo, aut recusandae! Laborum ea architecto earum minus illum ducimus blanditiis."}
-        </p>
+
+        <figure>
+          <img
+            src={anime.images.webp.image_url ?? "/no-img.png"}
+            alt={`${anime.title ?? "N/A"} Poster`}
+            className="rounded-xl py-1"
+          />
+        </figure>
+
+        <p className="max-h-36 overflow-y-auto">{anime.synopsis ?? "N/A"}</p>
         <div className="join">
           <div className="badge badge-error me-2">{anime.type ?? "N/A"}</div>
           <div className="badge badge-accent me-2">
